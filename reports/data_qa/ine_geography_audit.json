@@ -1,0 +1,1312 @@
+{
+  "generated_at": "2026-04-24T02:05:16",
+  "zip_file": "data\\raw\\ine\\bgd_11_Shapefile.zip",
+  "status": "inspected",
+  "nested_7z_files": [
+    "11 GUANAJUATO.7z"
+  ],
+  "extractor_used": "tar",
+  "extractor_note": "py7zr not available (install: pip install py7zr) | tar extraction succeeded",
+  "layers_found": [
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\ADOQUIN.shp",
+      "row_count": 102,
+      "shp_shape_type": "Polygon",
+      "columns": [
+        "ID",
+        "CONTROL",
+        "Geometry1_"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\AEROPUERTO.shp",
+      "row_count": 3,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "TIPO",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\AUTOPISTA.shp",
+      "row_count": 35,
+      "shp_shape_type": "Polyline",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONDICION",
+        "VELOCIDAD_",
+        "CONTROL",
+        "Geometry1_"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\BRECHA.shp",
+      "row_count": 3759,
+      "shp_shape_type": "Polyline",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONDICION",
+        "VELOCIDAD_",
+        "CONTROL",
+        "Geometry1_"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\CABECERA_MUNICIPAL.shp",
+      "row_count": 46,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "ENTIDAD",
+        "MUNICIPIO",
+        "LOCALIDAD_",
+        "LOCALIDAD_",
+        "CONTROL",
+        "Geometry2_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "ENTIDAD"
+        ],
+        "municipio": [
+          "MUNICIPIO"
+        ],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\CAPITAL.shp",
+      "row_count": 2,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ENTIDAD",
+        "MUNICIPIO",
+        "LOCALIDAD_",
+        "LOCALIDAD_",
+        "ID",
+        "CONTROL",
+        "Geometry2_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "ENTIDAD"
+        ],
+        "municipio": [
+          "MUNICIPIO"
+        ],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\CEMENTERIO.shp",
+      "row_count": 259,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\CENTRAL_AUTOBUS.shp",
+      "row_count": 31,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\CENTRO_COMERCIAL.shp",
+      "row_count": 49,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\CENTRO_CULTURAL.shp",
+      "row_count": 64,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\CENTRO_RECREATIVO.shp",
+      "row_count": 36,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\COLONIA.shp",
+      "row_count": 6400,
+      "shp_shape_type": "Polygon",
+      "columns": [
+        "ID",
+        "ENTIDAD",
+        "MUNICIPIO",
+        "NOMBRE",
+        "CLASIFICAC",
+        "CP",
+        "OTROS_CP",
+        "CONTROL",
+        "Geometry1_"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "ENTIDAD"
+        ],
+        "municipio": [
+          "MUNICIPIO"
+        ],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\DISTRITO_FEDERAL.shp",
+      "row_count": 15,
+      "shp_shape_type": "Polygon",
+      "columns": [
+        "id",
+        "entidad",
+        "tipo",
+        "distrito_f",
+        "control"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "entidad"
+        ],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\DISTRITO_LOCAL.shp",
+      "row_count": 22,
+      "shp_shape_type": "Polygon",
+      "columns": [
+        "id",
+        "entidad",
+        "distrito_l"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "entidad"
+        ],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\EDIFICIO.shp",
+      "row_count": 65,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "DIRECCION",
+        "ENTRADA",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\ENTIDAD.shp",
+      "row_count": 1,
+      "shp_shape_type": "Polygon",
+      "columns": [
+        "id",
+        "entidad",
+        "nombre",
+        "circunscri",
+        "crc",
+        "control"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "entidad"
+        ],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\ESCUELA.shp",
+      "row_count": 8081,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "TIPO",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\FERROCARRIL.shp",
+      "row_count": 37,
+      "shp_shape_type": "Polyline",
+      "columns": [
+        "ID",
+        "CONDICION",
+        "OBSERVACIO",
+        "NOMBRE_EST",
+        "NOMBRE_VIA",
+        "CONTROL",
+        "Geometry1_"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\HOSPITAL.shp",
+      "row_count": 1096,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\IGLESIA.shp",
+      "row_count": 3631,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\INSTALACIONES_BANCARIAS.shp",
+      "row_count": 59,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\INSTALACIONES_DEPORTIVAS.shp",
+      "row_count": 2025,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\LAGOS.shp",
+      "row_count": 5462,
+      "shp_shape_type": "Polygon",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "TIPO",
+        "STATUS",
+        "CONTROL",
+        "Geometry1_"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 4554,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\LIMITE_LOCALIDAD.shp",
+      "row_count": 2155,
+      "shp_shape_type": "Polygon",
+      "columns": [
+        "ID",
+        "ENTIDAD",
+        "MUNICIPIO",
+        "LOCALIDAD",
+        "NOMBRE",
+        "TIPO",
+        "CABECERA",
+        "CONTROL",
+        "Geometry1_"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "ENTIDAD"
+        ],
+        "municipio": [
+          "MUNICIPIO"
+        ],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\LOCALIDAD.shp",
+      "row_count": 7429,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "ENTIDAD",
+        "MUNICIPIO",
+        "SECCION",
+        "LOCALIDAD",
+        "NOMBRE",
+        "TIPO",
+        "CABECERA",
+        "STATUS",
+        "CONTROL",
+        "Geometry1_",
+        "DISTRITO_F",
+        "DISTRITO_L",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "ENTIDAD"
+        ],
+        "municipio": [
+          "MUNICIPIO"
+        ],
+        "seccion": [
+          "SECCION"
+        ]
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\MANCHA_URBANA.shp",
+      "row_count": 2161,
+      "shp_shape_type": "Polygon",
+      "columns": [
+        "ID",
+        "ENTIDAD",
+        "NOMBRE_MAN",
+        "CONTROL",
+        "Geometry2_"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "ENTIDAD"
+        ],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\MANZANA.shp",
+      "row_count": 112130,
+      "shp_shape_type": "Polygon",
+      "columns": [
+        "ID",
+        "ENTIDAD",
+        "MUNICIPIO",
+        "SECCION",
+        "LOCALIDAD",
+        "STATUS",
+        "DISPERSO",
+        "CONTROL",
+        "MANZANA",
+        "Caso_Captu",
+        "Geometry1_",
+        "DISTRITO_F",
+        "DISTRITO_L"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "ENTIDAD"
+        ],
+        "municipio": [
+          "MUNICIPIO"
+        ],
+        "seccion": [
+          "SECCION"
+        ]
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\MERCADO.shp",
+      "row_count": 221,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\MODULO.shp",
+      "row_count": 30,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "ENTIDAD",
+        "MUNICIPIO",
+        "LOCALIDAD",
+        "SECCION",
+        "TIPO",
+        "MODULO",
+        "DOMICILIO",
+        "DIAS_ATENC",
+        "REFERENCIA",
+        "COD_POSTAL",
+        "OBSERVACIO",
+        "IMAGEN",
+        "HORARIO",
+        "DISTRITO",
+        "CONTROL",
+        "MANZANA",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "ENTIDAD"
+        ],
+        "municipio": [
+          "MUNICIPIO"
+        ],
+        "seccion": [
+          "SECCION"
+        ]
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\MUNICIPIO.shp",
+      "row_count": 46,
+      "shp_shape_type": "Polygon",
+      "columns": [
+        "id",
+        "entidad",
+        "municipio",
+        "nombre",
+        "control"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "entidad"
+        ],
+        "municipio": [
+          "municipio"
+        ],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\OFICINA_GUBERNAMENTAL.shp",
+      "row_count": 71,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\OFICINA_MUNICIPAL.shp",
+      "row_count": 184,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\PASTO.shp",
+      "row_count": 2664,
+      "shp_shape_type": "Polygon",
+      "columns": [
+        "ID",
+        "CONTROL",
+        "Geometry1_"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\PAVIMENTADA.shp",
+      "row_count": 1245,
+      "shp_shape_type": "Polyline",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONDICION",
+        "VELOCIDAD_",
+        "CONTROL",
+        "Geometry1_"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\PLAZA_MONUMENTO.shp",
+      "row_count": 1144,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\PUENTE.shp",
+      "row_count": 2182,
+      "shp_shape_type": "Polygon",
+      "columns": [
+        "ID",
+        "TIPO",
+        "OBSERVACIO",
+        "CONTROL",
+        "Geometry1_"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\RASGO_COMPLEMENTARIO_A.shp",
+      "row_count": 33609,
+      "shp_shape_type": "Polygon",
+      "columns": [
+        "ID",
+        "DESCRIPCIO",
+        "CONTROL",
+        "Geometry1_"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 24482,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\RASGO_COMPLEMENTARIO_L.shp",
+      "row_count": 33609,
+      "shp_shape_type": "Polyline",
+      "columns": [
+        "ID",
+        "DESCRIPCIO",
+        "CONTROL",
+        "Geometry1_"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 10174,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\RIOS.shp",
+      "row_count": 5462,
+      "shp_shape_type": "Polyline",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "TIPO",
+        "STATUS",
+        "CONTROL",
+        "Geometry1_"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 2861,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\SECCION.shp",
+      "row_count": 3357,
+      "shp_shape_type": "Polygon",
+      "columns": [
+        "id",
+        "entidad",
+        "distrito_f",
+        "distrito_l",
+        "municipio",
+        "seccion",
+        "tipo",
+        "control"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "entidad"
+        ],
+        "municipio": [
+          "municipio"
+        ],
+        "seccion": [
+          "seccion"
+        ]
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\TERRACERIA.shp",
+      "row_count": 2027,
+      "shp_shape_type": "Polyline",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONDICION",
+        "VELOCIDAD_",
+        "CONTROL",
+        "Geometry1_"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\VEREDA.shp",
+      "row_count": 1288,
+      "shp_shape_type": "Polyline",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CONDICION",
+        "VELOCIDAD_",
+        "CONTROL",
+        "Geometry1_"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\VIALIDAD.shp",
+      "row_count": 100130,
+      "shp_shape_type": "Polyline",
+      "columns": [
+        "ID",
+        "NOMBRE",
+        "CATEGORIA",
+        "TIPO",
+        "SENTIDO",
+        "VELOCIDAD_",
+        "CONTROL",
+        "Geometry1_"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": []
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\VOCAL_DISTRITAL_DEL_RFE.shp",
+      "row_count": 15,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "DISTRITO",
+        "LOCALIDAD_",
+        "LOCALIDAD_",
+        "VOCAL_NOMB",
+        "CALLE_Y_No",
+        "COLONIA",
+        "TELEFONO",
+        "FAX",
+        "COD_POSTAL",
+        "ENTIDAD",
+        "MUNICIPIO",
+        "SECCION",
+        "MANZANA",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "ENTIDAD"
+        ],
+        "municipio": [
+          "MUNICIPIO"
+        ],
+        "seccion": [
+          "SECCION"
+        ]
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\VOCAL_EJECUTIVO_DISTRITAL.shp",
+      "row_count": 15,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "ENTIDAD",
+        "DISTRITO",
+        "MUNICIPIO",
+        "SECCION",
+        "LOCALIDAD_",
+        "MANZANA",
+        "LOCALIDAD_",
+        "VOCAL_NOMB",
+        "CALLE_Y_No",
+        "COLONIA",
+        "TELEFONO",
+        "FAX",
+        "COD_POSTAL",
+        "CONTROL",
+        "Geometry_s",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "ENTIDAD"
+        ],
+        "municipio": [
+          "MUNICIPIO"
+        ],
+        "seccion": [
+          "SECCION"
+        ]
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\VOCAL_EJECUTIVO_ESTATAL.shp",
+      "row_count": 1,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "ENTIDAD",
+        "DISTRITO",
+        "MUNICIPIO",
+        "SECCION",
+        "LOCALIDAD_",
+        "MANZANA",
+        "CALLE_Y_No",
+        "LOCALIDAD_",
+        "VOCAL_NOMB",
+        "COLONIA",
+        "TELEFONO",
+        "FAX",
+        "COD_POSTAL",
+        "CONTROL",
+        "Geometry_s",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "ENTIDAD"
+        ],
+        "municipio": [
+          "MUNICIPIO"
+        ],
+        "seccion": [
+          "SECCION"
+        ]
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    },
+    {
+      "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\VOCAL_ESTATAL_DEL_RFE.shp",
+      "row_count": 1,
+      "shp_shape_type": "Point",
+      "columns": [
+        "ID",
+        "DISTRITO",
+        "LOCALIDAD_",
+        "FAX",
+        "ENTIDAD",
+        "LOCALIDAD_",
+        "VOCAL_NOMB",
+        "CALLE_Y_No",
+        "COLONIA",
+        "TELEFONO",
+        "COD_POSTAL",
+        "MUNICIPIO",
+        "SECCION",
+        "MANZANA",
+        "CONTROL",
+        "Geometry1_",
+        "GMRotation"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "ENTIDAD"
+        ],
+        "municipio": [
+          "MUNICIPIO"
+        ],
+        "seccion": [
+          "SECCION"
+        ]
+      },
+      "crs_hint": "EPSG:32614 (heuristic)",
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "issues": [
+        "geopandas not available or failed; using structural shapefile checks."
+      ]
+    }
+  ],
+  "section_layer": {
+    "shp_path": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\SECCION.shp",
+    "row_count": 3357,
+    "crs_wkt": "PROJCS[\"WGS_1984_UTM_Zone_14N\",GEOGCS[\"GCS_WGS_1984\",DATUM[\"D_WGS_1984\",SPHEROID[\"WGS_1984\",6378137.0,298.257223563]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"False_Easting\",500000.0],PARAMETER[\"False_Northing\",0.0],PARAMETER[\"Central_Meridian\",-99.0],PARAMETER[\"Scale_Factor\",0.9996],PARAMETER[\"Latitude_Of_Origin\",0.0],UNIT[\"Meter\",1.0]]",
+    "crs_hint": "EPSG:32614 (heuristic)",
+    "geometry_types": [
+      "Polygon"
+    ],
+    "shp_shape_type": "Polygon",
+    "columns": [
+      "id",
+      "entidad",
+      "distrito_f",
+      "distrito_l",
+      "municipio",
+      "seccion",
+      "tipo",
+      "control"
+    ],
+    "key_candidates": {
+      "entidad": [
+        "entidad"
+      ],
+      "municipio": [
+        "municipio"
+      ],
+      "seccion": [
+        "seccion"
+      ]
+    },
+    "null_geometries": 0,
+    "invalid_geometries": 0,
+    "issues": [
+      "geopandas not available or failed; using structural shapefile checks."
+    ]
+  },
+  "usable_for_territorial_join": true,
+  "issues": []
+}

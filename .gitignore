@@ -1,0 +1,42 @@
+# Dependencies and build outputs
+node_modules/
+.next/
+
+# Local environments
+.venv/
+venv/
+
+# Exported artifacts
+exports/
+
+# Temporary heavy QA extraction output
+reports/data_qa/tmp_ine_extract/
+
+# Raw data (keep only lightweight traceability files)
+data/raw/*
+!data/raw/README.md
+!data/raw/data_inventory.csv
+!data/raw/manual/
+!data/raw/manual/fuentes-manifest.csv
+
+# System and editor temporary files
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+ehthumbs.db
+*.tmp
+*.temp
+*.swp
+*.swo
+*.log
+
+# Keep required tracked artifacts explicit
+!public/data/secciones.geojson
+!public/config/editorial-map-spec.json
+!data/processed/
+!docs/
+!README.md
+!reports/frontend_qa/
+!reports/data_qa/*.md
+!reports/data_qa/*.json

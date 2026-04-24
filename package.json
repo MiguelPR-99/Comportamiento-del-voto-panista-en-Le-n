@@ -1,0 +1,29 @@
+{
+  "name": "leon-pan-editorial-map",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "lint": "next lint",
+    "start": "next start",
+    "export:png": "node scripts/export-png.mjs"
+  },
+  "dependencies": {
+    "html-to-image": "^1.11.13",
+    "maplibre-gl": "^4.7.1",
+    "next": "^14.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/geojson": "^7946.0.16",
+    "@types/node": "^20.14.12",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.0",
+    "playwright": "^1.59.1",
+    "typescript": "^5.5.4"
+  }
+}

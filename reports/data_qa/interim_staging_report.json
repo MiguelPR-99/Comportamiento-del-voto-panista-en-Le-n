@@ -1,0 +1,109 @@
+{
+  "generated_at": "2026-04-24T07:45:41",
+  "generated_files": [
+    "data\\interim\\ine_secciones_raw_index.csv",
+    "data\\interim\\ine_secciones_leon.geojson",
+    "data\\interim\\edmslm_leon.csv",
+    "data\\interim\\ieeg_2018_diputaciones_seccion.csv",
+    "data\\interim\\ieeg_2021_diputaciones_seccion.csv",
+    "data\\interim\\join_key_diagnostics.csv"
+  ],
+  "counts_by_source": {
+    "ine_leon_sections": 846,
+    "edmslm_leon_sections": 846,
+    "ieeg_2018_sections": 699,
+    "ieeg_2021_sections": 713
+  },
+  "columns_normalized": {
+    "ine_min": [
+      "entidad",
+      "municipio",
+      "seccion",
+      "section_id",
+      "geometry"
+    ],
+    "edmslm_min": [
+      "entidad",
+      "municipio",
+      "municipio_nombre",
+      "seccion",
+      "section_id",
+      "distrito_local",
+      "distrito_federal"
+    ],
+    "ieeg_2018_min": [
+      "entidad",
+      "municipio",
+      "seccion",
+      "section_id",
+      "pan_2018_votos",
+      "total_2018",
+      "pct_pan_2018",
+      "source_rows_2018"
+    ],
+    "ieeg_2021_min": [
+      "entidad",
+      "municipio",
+      "seccion",
+      "section_id",
+      "pan_2021_votos",
+      "total_2021",
+      "pct_pan_2021",
+      "source_rows_2021"
+    ]
+  },
+  "section_id_formula": "section_id = entidad(2) + municipio(3) + seccion(normalizada sin decimales)",
+  "join_status_counts": {
+    "complete": 699,
+    "partial_electoral": 14,
+    "no_electoral": 133
+  },
+  "secciones_sin_match": {
+    "missing_2018": 147,
+    "missing_2021": 133
+  },
+  "duplicates": {
+    "ine": 0,
+    "edmslm": 0,
+    "ieeg_2018": 0,
+    "ieeg_2021": 0
+  },
+  "nulls": {
+    "edmslm": {
+      "entidad": 0,
+      "municipio": 0,
+      "seccion": 0,
+      "section_id": 0
+    },
+    "ieeg_2018": {
+      "entidad": 0,
+      "municipio": 0,
+      "seccion": 0,
+      "section_id": 0,
+      "pct_pan_2018": 2
+    },
+    "ieeg_2021": {
+      "entidad": 0,
+      "municipio": 0,
+      "seccion": 0,
+      "section_id": 0,
+      "pct_pan_2021": 0
+    }
+  },
+  "totals": {
+    "pan_2018_total": 265152,
+    "total_2018_total": 507529,
+    "pan_2021_total": 264046,
+    "total_2021_total": 456168
+  },
+  "warnings": [
+    "147 section_id without 2018 electoral data.",
+    "133 section_id without 2021 electoral data."
+  ],
+  "epic_2_3_notes": {
+    "missing_to_no_data_rule": "missing_2018 y missing_2021 pasaran a has_data=false y bivariate_class=no_data en Epica 2.3",
+    "municipio_020_semantics": "municipio=020 en tablas electorales staged corresponde a Leon y fue derivado/normalizado para compatibilidad territorial",
+    "crs_pending_note": "CRS EPSG:32614 sigue pendiente de confirmacion programatica completa, pero no bloquea metricas electorales"
+  },
+  "decision": "aprobado para Epica 2.3"
+}

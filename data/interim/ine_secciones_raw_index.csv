@@ -1,0 +1,2 @@
+layer_name,original_columns,crs_detected,row_count,null_geometries,invalid_geometries,candidate_entidad,candidate_municipio,candidate_seccion,extractor_used
+reports\data_qa\tmp_ine_extract\11 GUANAJUATO\SECCION.shp,id|entidad|distrito_f|distrito_l|municipio|seccion|tipo|control,EPSG:32614 (heuristic),3357,0,0,entidad,municipio,seccion,tar

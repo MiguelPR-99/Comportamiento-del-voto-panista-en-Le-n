@@ -1,0 +1,320 @@
+{
+  "generated_at": "2026-04-24T02:05:21",
+  "results": [
+    {
+      "file": "data\\raw\\ine\\bgd_11_Shapefile.zip",
+      "status": "inspected",
+      "detected_format": "zip -> 7z -> shapefile",
+      "row_count_sampled": 3357,
+      "columns": [
+        "id",
+        "entidad",
+        "distrito_f",
+        "distrito_l",
+        "municipio",
+        "seccion",
+        "tipo",
+        "control"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "entidad"
+        ],
+        "municipio": [
+          "municipio"
+        ],
+        "seccion": [
+          "seccion"
+        ]
+      },
+      "vote_candidates": {
+        "pan": [],
+        "total_votos": []
+      },
+      "issues": [],
+      "section_layer_detected": "reports\\data_qa\\tmp_ine_extract\\11 GUANAJUATO\\SECCION.shp",
+      "crs": "EPSG:32614 (heuristic)",
+      "geometry_types": [
+        "Polygon"
+      ],
+      "null_geometries": 0,
+      "invalid_geometries": 0,
+      "usable_for_territorial_join": true
+    },
+    {
+      "file": "data\\raw\\ine\\edmslm_ine_corte_ene_2026.txt",
+      "status": "ok",
+      "detected_format": "txt",
+      "row_count_sampled": 30,
+      "columns": [
+        "ENTIDAD",
+        "DISTRITO",
+        "MUNICIPIO",
+        "NOMBRE_MUNICIPIO",
+        "SECCION",
+        "TIPO_SECCION",
+        "TIPO_NOMBRE",
+        "LOCALIDAD",
+        "NOMBRE_LOCALIDAD",
+        "TIPO_LOCALIDAD",
+        "TIPO_NOMBRE_LOCALIDAD",
+        "MANZANA",
+        "STATUS"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "ENTIDAD"
+        ],
+        "municipio": [
+          "MUNICIPIO",
+          "NOMBRE_MUNICIPIO"
+        ],
+        "seccion": [
+          "SECCION",
+          "TIPO_SECCION"
+        ],
+        "distrito_local": [
+          "DISTRITO"
+        ],
+        "municipio_nombre": [
+          "NOMBRE_MUNICIPIO"
+        ],
+        "casilla": []
+      },
+      "vote_candidates": {
+        "pan": [],
+        "total_votos": []
+      },
+      "issues": []
+    },
+    {
+      "file": "data\\raw\\ieeg\\2018\\Computo x casillas Diputaciones.xlsx",
+      "status": "ok",
+      "detected_format": "xlsx",
+      "row_count_sampled": 79,
+      "columns": [
+        "UBICACI\u00d3N",
+        "SECCI\u00d3N",
+        "CASILLA",
+        "PAN",
+        "PRI",
+        "PRD",
+        "PVEM",
+        "PT",
+        "MC",
+        "NA",
+        "MORENA",
+        "PES",
+        "MORENA_PT_PES",
+        "MORENA_PT",
+        "MORENA_PES",
+        "PT_PES",
+        "PAN_PRD",
+        "CAND_IND_1",
+        "NOREG",
+        "NULO",
+        "TOTAL",
+        "LN"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": [
+          "SECCI\u00d3N"
+        ],
+        "distrito_local": [],
+        "municipio_nombre": [],
+        "casilla": [
+          "CASILLA"
+        ]
+      },
+      "vote_candidates": {
+        "pan": [
+          "PAN"
+        ],
+        "total_votos": [
+          "TOTAL"
+        ]
+      },
+      "issues": []
+    },
+    {
+      "file": "data\\raw\\ieeg\\2021\\computos_ieeg_2021_diputaciones_base_datos.zip",
+      "status": "ok",
+      "detected_format": "zip",
+      "row_count_sampled": null,
+      "columns": [],
+      "key_candidates": {},
+      "vote_candidates": {},
+      "issues": []
+    },
+    {
+      "file": "data\\raw\\ieeg\\2021\\computos_ieeg_2021_diputaciones_base_datos.zip::20210610_1200_DIP_LOC_GTO.zip",
+      "status": "ok",
+      "detected_format": "nested zip",
+      "row_count_sampled": null,
+      "columns": [],
+      "key_candidates": {},
+      "vote_candidates": {},
+      "issues": []
+    },
+    {
+      "file": "data\\raw\\ieeg\\2021\\computos_ieeg_2021_diputaciones_base_datos.zip::20210610_1200_DIP_LOC_GTO.zip::GTO_DIP_LOC_CANDIDATURAS_2021.csv",
+      "status": "ok",
+      "detected_format": "csv (cp1252, ',')",
+      "row_count_sampled": 257,
+      "columns": [
+        "ID_ESTADO",
+        "ID_DISTRITO_LOCAL",
+        "PARTIDO_CI",
+        "CANDIDATURA_PROPIETARIA",
+        "CANDIDATURA_SUPLENTE"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "ID_ESTADO"
+        ],
+        "municipio": [],
+        "seccion": [],
+        "distrito_local": [
+          "ID_DISTRITO_LOCAL"
+        ],
+        "municipio_nombre": [],
+        "casilla": []
+      },
+      "vote_candidates": {
+        "pan": [],
+        "total_votos": []
+      },
+      "issues": [],
+      "role": "auxiliary_metadata"
+    },
+    {
+      "file": "data\\raw\\ieeg\\2021\\computos_ieeg_2021_diputaciones_base_datos.zip::20210610_1200_DIP_LOC_GTO.zip::GTO_DIP_LOC_2021.csv",
+      "status": "ok",
+      "detected_format": "csv (utf-8-sig, ',')",
+      "row_count_sampled": 2000,
+      "columns": [
+        "CLAVE_CASILLA",
+        "CLAVE_ACTA",
+        "ID_ESTADO",
+        "ESTADO",
+        "ID_DISTRITO_LOCAL",
+        "DISTRITO_LOCAL",
+        "SECCION",
+        "ID_CASILLA",
+        "TIPO_CASILLA",
+        "EXT_CONTIGUA",
+        "TIPO",
+        "PAN",
+        "PRI",
+        "PRD",
+        "PVEM",
+        "PT",
+        "MC",
+        "MORENA",
+        "NA_Gto",
+        "PES",
+        "RSP",
+        "FXM",
+        "CAND_IND_1",
+        "PRI_PRD",
+        "NO_REGISTRADOS",
+        "NULOS",
+        "TOTAL_VOTOS_CALCULADO",
+        "LISTA_NOMINAL",
+        "OBSERVACIONES"
+      ],
+      "key_candidates": {
+        "entidad": [
+          "ID_ESTADO"
+        ],
+        "municipio": [],
+        "seccion": [
+          "SECCION"
+        ],
+        "distrito_local": [
+          "ID_DISTRITO_LOCAL",
+          "DISTRITO_LOCAL"
+        ],
+        "municipio_nombre": [],
+        "casilla": [
+          "CLAVE_CASILLA",
+          "ID_CASILLA",
+          "TIPO_CASILLA"
+        ]
+      },
+      "vote_candidates": {
+        "pan": [
+          "PAN"
+        ],
+        "total_votos": [
+          "TOTAL_VOTOS_CALCULADO"
+        ]
+      },
+      "issues": [],
+      "role": "primary_votes"
+    },
+    {
+      "file": "data\\raw\\manual\\fuentes-manifest.csv",
+      "status": "ok",
+      "detected_format": "csv",
+      "row_count_sampled": 4,
+      "columns": [
+        "source_institution",
+        "artifact_type",
+        "year",
+        "url",
+        "date_accessed",
+        "local_folder",
+        "local_filename",
+        "notes"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": [],
+        "distrito_local": [],
+        "municipio_nombre": [],
+        "casilla": []
+      },
+      "vote_candidates": {
+        "pan": [],
+        "total_votos": []
+      },
+      "issues": []
+    },
+    {
+      "file": "data\\raw\\data_inventory.csv",
+      "status": "ok",
+      "detected_format": "csv",
+      "row_count_sampled": 10,
+      "columns": [
+        "source_institution",
+        "election_year",
+        "artifact_type",
+        "expected_folder",
+        "expected_filename",
+        "actual_filename",
+        "format",
+        "required_for_epic_2",
+        "acquisition_status",
+        "acceptance_criteria",
+        "notes"
+      ],
+      "key_candidates": {
+        "entidad": [],
+        "municipio": [],
+        "seccion": [],
+        "distrito_local": [],
+        "municipio_nombre": [],
+        "casilla": []
+      },
+      "vote_candidates": {
+        "pan": [],
+        "total_votos": []
+      },
+      "issues": []
+    }
+  ]
+}

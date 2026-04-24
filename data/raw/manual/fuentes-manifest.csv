@@ -1,0 +1,5 @@
+source_institution,artifact_type,year,url,date_accessed,local_folder,local_filename,notes
+INE,marco_seccional,,https://cartografia.ine.mx/sige8/productosCartograficos/bases,2026-04-24,data/raw/ine/,,
+INE,catalogo_geoelectoral,,https://cartografia.ine.mx/sige8/productosCartograficos/catalogos,2026-04-24,data/raw/ine/,,
+IEEG,resultados_diputaciones,2018,https://sistemas.ieeg.mx/computos-finales-2018/assets/files/Computo%20x%20casillas%20Diputaciones.xlsx,2026-04-24,data/raw/ieeg/2018/,,
+IEEG,resultados_diputaciones,2021,https://computosgto2021.ieeg.mx/,2026-04-24,data/raw/ieeg/2021/,,

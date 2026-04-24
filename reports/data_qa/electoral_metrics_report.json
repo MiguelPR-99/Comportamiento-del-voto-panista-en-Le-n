@@ -1,0 +1,98 @@
+{
+  "generated_at": "2026-04-24T08:00:15",
+  "inputs": [
+    "data\\interim\\ine_secciones_leon.geojson",
+    "data\\interim\\edmslm_leon.csv",
+    "data\\interim\\ieeg_2018_diputaciones_seccion.csv",
+    "data\\interim\\ieeg_2021_diputaciones_seccion.csv"
+  ],
+  "outputs": [
+    "data\\interim\\leon_electoral_metrics.csv",
+    "data\\interim\\leon_electoral_metrics.geojson",
+    "reports\\data_qa\\electoral_metrics_report.md",
+    "reports\\data_qa\\electoral_metrics_report.json"
+  ],
+  "section_id_formula": "section_id = entidad(2) + municipio(3) + seccion(normalizada sin decimales)",
+  "counts": {
+    "sections_total": 846,
+    "has_data_true": 697,
+    "has_data_false": 149,
+    "no_data_count": 149
+  },
+  "bivariate_class_counts": {
+    "decline_low": 3,
+    "decline_mid": 1,
+    "growth_high": 106,
+    "growth_mid": 30,
+    "no_data": 149,
+    "stable_high": 122,
+    "stable_low": 7,
+    "stable_mid": 428
+  },
+  "issue_type_counts": {
+    "missing_2018": 16,
+    "missing_both": 133,
+    "none": 697
+  },
+  "secciones_sin_match": {
+    "total_with_issues": 149,
+    "sample_section_ids": [
+      "110201536",
+      "110201538",
+      "110203155",
+      "110203156",
+      "110203157",
+      "110203158",
+      "110203159",
+      "110203160",
+      "110203161",
+      "110203162",
+      "110203163",
+      "110203164",
+      "110203165",
+      "110203166",
+      "110203167",
+      "110203168",
+      "110203182",
+      "110203183",
+      "110203184",
+      "110203185",
+      "110203186",
+      "110203187",
+      "110203188",
+      "110203189",
+      "110203190",
+      "110203191",
+      "110203192",
+      "110203193",
+      "110203194",
+      "110203195"
+    ]
+  },
+  "totals": {
+    "pan_2018_total": 265152.0,
+    "total_2018_total": 507529.0,
+    "pan_2021_total": 264046.0,
+    "total_2021_total": 456168.0
+  },
+  "validations": {
+    "duplicate_section_ids": 0,
+    "pct_pan_2018_out_of_range": 0,
+    "pct_pan_2021_out_of_range": 0,
+    "delta_pan_pp_out_of_range": 0,
+    "invalid_bivariate_class": 0,
+    "has_data_no_data_inconsistency": 0,
+    "geometry_preserved": true
+  },
+  "warnings": [
+    "16 section_id with missing 2018 metrics.",
+    "133 section_id with missing 2018 and 2021 metrics."
+  ],
+  "data_quality_notes": {
+    "zero_rows_2018_from_staging": 2,
+    "statement": "Existen 2 secciones con pan_2018_votos=0 y total_2018=0 heredadas del staging 2018; no son ceros inyectados en Epica 2.3.",
+    "traceability_rule": "Estos casos permanecen en missing_2018 y se clasifican como no_data cuando pct_pan_2018 es null.",
+    "imputation_policy": "No imputar cero para resolver faltantes."
+  },
+  "decision": "aprobado para Epica 2.4"
+}

@@ -1,0 +1,8 @@
+pandas
+geopandas
+pyogrio
+shapely
+openpyxl
+py7zr
+chardet
+pyarrow

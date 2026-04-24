@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0.0",
+  "project_id": "leon_pan_bivariate",
+  "title": "Comportamiento del voto panista en León",
+  "subtitle": "Variación del voto PAN entre 2018 y 2021 por sección electoral",
+  "source_lines": [
+    "Fuentes: INE (cartografia seccional), IEEG (resultados de diputaciones 2018 y 2021), INEGI (referencia territorial)."
+  ],
+  "author_note": "Elaboracion editorial para pieza interactiva. No se imputan ceros para resolver faltantes electorales.",
+  "palette": {
+    "family": "violeta_azul_rosa",
+    "class_color_map": {
+      "decline_low": "#F4C3DA",
+      "decline_mid": "#D98DBF",
+      "decline_high": "#B95C9E",
+      "stable_low": "#C8C5EA",
+      "stable_mid": "#9C90D4",
+      "stable_high": "#6F67C3",
+      "growth_low": "#9EC8EA",
+      "growth_mid": "#669DD8",
+      "growth_high": "#2F62B8",
+      "no_data": "#CFCFCF"
+    },
+    "neutral_no_data": "#CFCFCF"
+  },
+  "class_color_map": {
+    "decline_low": "#F4C3DA",
+    "decline_mid": "#D98DBF",
+    "decline_high": "#B95C9E",
+    "stable_low": "#C8C5EA",
+    "stable_mid": "#9C90D4",
+    "stable_high": "#6F67C3",
+    "growth_low": "#9EC8EA",
+    "growth_mid": "#669DD8",
+    "growth_high": "#2F62B8",
+    "no_data": "#CFCFCF"
+  },
+  "legend": {
+    "type": "bivariate_3x3",
+    "x_axis_label": "Porcentaje de voto PAN 2021",
+    "y_axis_label": "Variacion respecto a 2018 (pp)",
+    "bins": {
+      "vote_share_bin": {
+        "low": "<40",
+        "mid": "40-<60",
+        "high": ">=60"
+      },
+      "delta_bin": {
+        "decline": "<-10",
+        "stable": "-10 a 10",
+        "growth": ">10"
+      }
+    },
+    "matrix": {
+      "rows": [
+        "growth",
+        "stable",
+        "decline"
+      ],
+      "cols": [
+        "low",
+        "mid",
+        "high"
+      ],
+      "class_grid": [
+        [
+          "growth_low",
+          "growth_mid",
+          "growth_high"
+        ],
+        [
+          "stable_low",
+          "stable_mid",
+          "stable_high"
+        ],
+        [
+          "decline_low",
+          "decline_mid",
+          "decline_high"
+        ]
+      ]
+    },
+    "class_counts": {
+      "decline_low": 3,
+      "decline_mid": 1,
+      "decline_high": 0,
+      "stable_low": 7,
+      "stable_mid": 428,
+      "stable_high": 122,
+      "growth_low": 0,
+      "growth_mid": 30,
+      "growth_high": 106,
+      "no_data": 149
+    },
+    "include_no_data": true
+  },
+  "main_view": {
+    "layout": "desktop-first",
+    "center": [
+      -101.592574,
+      21.09991
+    ],
+    "zoom": 10.1,
+    "bounds": [
+      -101.812659,
+      20.863254,
+      -101.37249,
+      21.336565
+    ]
+  },
+  "inset_view": {
+    "layout": "desktop-first",
+    "center": [
+      -101.592574,
+      21.09991
+    ],
+    "zoom": 11.7,
+    "enabled": false,
+    "notes": "Inset formal pendiente de definicion geometrica."
+  },
+  "scale_bar_km": 3,
+  "no_data_style": {
+    "fill": "#CFCFCF",
+    "hatch": "diagonal",
+    "stroke": "#8F8F8F"
+  },
+  "interaction_policy": {
+    "layout": "desktop-first",
+    "mode": "replica fiel + microinteracciones",
+    "allow_hover": true,
+    "allow_click": true,
+    "allow_scroll_zoom": false,
+    "allow_filters": false,
+    "allow_tabs": false,
+    "allow_sidebar_metrics": false
+  },
+  "data_files": {
+    "secciones": "/data/secciones.geojson"
+  },
+  "qa_summary": {
+    "feature_count": 846,
+    "class_counts": {
+      "decline_low": 3,
+      "decline_mid": 1,
+      "decline_high": 0,
+      "stable_low": 7,
+      "stable_mid": 428,
+      "stable_high": 122,
+      "growth_low": 0,
+      "growth_mid": 30,
+      "growth_high": 106,
+      "no_data": 149
+    },
+    "contract_validation": {
+      "required_fields_present": true,
+      "unexpected_fields_present": [],
+      "missing_fields": [],
+      "ordered_fields_match": true
+    },
+    "warnings_count": 2
+  },
+  "warnings": [
+    "is_in_inset se asigno en false por defecto; no existe geometria formal de inset en esta fase.",
+    "CRS indicaba EPSG:4326 pero coordenadas no estaban en rango geodesico; se corrigio asumiendo EPSG:32614."
+  ]
+}
