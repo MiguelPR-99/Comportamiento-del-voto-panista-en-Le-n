@@ -10,7 +10,7 @@ Deploy publico: [https://voto-panista-leon.vercel.app/](https://voto-panista-leo
 
 Export oficial validado:
 
-![Export v1](exports/leon_pan_bivariate_desktop.png)
+![Export v1](public/images/leon_pan_bivariate_v1.1.0.png)
 
 ## Stack
 

@@ -19,6 +19,12 @@ data/raw/*
 !data/raw/manual/
 !data/raw/manual/fuentes-manifest.csv
 
+# Non-public intermediate and planning assets
+data/interim/
+Planning/
+Cartografía oficial de secciones electorales.docx
+Imagen_referencia.png
+
 # System and editor temporary files
 .DS_Store
 Thumbs.db
