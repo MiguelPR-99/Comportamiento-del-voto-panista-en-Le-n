@@ -138,7 +138,7 @@ export function EditorialMap({ spec, sections, activeSectionId, onActiveSectionC
             [bounds[0], bounds[1]],
             [bounds[2], bounds[3]]
           ],
-          { padding: 24, duration: 0 }
+          { padding: 10, duration: 0 }
         );
       }
 
@@ -225,7 +225,7 @@ export function EditorialMap({ spec, sections, activeSectionId, onActiveSectionC
       aria-describedby="map-description"
     >
       <div className="editorial-map-canvas" ref={containerRef} />
-      <div className="map-scale-overlay" aria-label="Escala grafica en kilometros">
+      <div className="map-scale-overlay" aria-label={"Escala gr\u00e1fica en kil\u00f3metros"}>
         <span className="map-scale-label">{scaleState.label}</span>
         <span className="map-scale-bar" style={{ width: `${scaleState.widthPx}px` }} />
       </div>

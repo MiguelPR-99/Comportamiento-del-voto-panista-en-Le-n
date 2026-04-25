@@ -7,6 +7,7 @@ import { EditorialMap } from "@/components/EditorialMap";
 import { InsetMap } from "@/components/InsetMap";
 import { SourceNote } from "@/components/SourceNote";
 import { loadMapSpec, loadSectionsGeoJSON } from "@/lib/loadMapSpec";
+import { formatMetric, getBivariateClassLabel, normalizeEditorialText } from "@/lib/presentation";
 import type { EditorialMapSpec, SectionFeatureProperties, SectionsGeoJSON } from "@/lib/types";
 
 function normalizeFeatureWarnings(sections: SectionsGeoJSON, spec: EditorialMapSpec): SectionsGeoJSON {
@@ -41,13 +42,6 @@ function normalizeFeatureWarnings(sections: SectionsGeoJSON, spec: EditorialMapS
   return { ...sections, features };
 }
 
-function formatMetric(value: number | null): string {
-  if (value === null || Number.isNaN(value)) {
-    return "N/D";
-  }
-  return value.toFixed(2);
-}
-
 export function MapShell() {
   const exportRootRef = useRef<HTMLElement | null>(null);
   const [spec, setSpec] = useState<EditorialMapSpec | null>(null);
@@ -80,7 +74,7 @@ export function MapShell() {
       }
       await new Promise((resolve) => window.setTimeout(resolve, stepMs));
     }
-    throw new Error("Los mapas no terminaron de renderizar para exportacion.");
+    throw new Error("Los mapas no terminaron de renderizar para exportaci\u00f3n.");
   };
 
   const handleExportPng = async () => {
@@ -162,11 +156,11 @@ export function MapShell() {
     <main className="editorial-root" ref={exportRootRef} data-export-root="true">
       <header className="editorial-header" aria-labelledby="main-title">
         <h1 id="main-title" className="editorial-title">
-          {spec.title}
+          {normalizeEditorialText(spec.title)}
         </h1>
         <div className="editorial-head-right">
           <p className="editorial-subtitle" id="main-subtitle">
-            {spec.subtitle}
+            {normalizeEditorialText(spec.subtitle)}
           </p>
           <div className="editorial-actions" data-export-ignore="true">
             <button
@@ -178,15 +172,14 @@ export function MapShell() {
             >
               {exportingPng ? "Exportando..." : mapsReady ? "Exportar PNG" : "Preparando mapas..."}
             </button>
-            {exportError ? <p className="export-error">Error de exportacion: {exportError}</p> : null}
+            {exportError ? <p className="export-error">Error de exportaci\u00f3n: {exportError}</p> : null}
             {!mapsReady && !exportError ? <p className="export-hint">Espera a que mapa e inset terminen de renderizar.</p> : null}
           </div>
         </div>
       </header>
 
       <p className="map-caption" id="map-description">
-        Mapa interactivo editorial de secciones electorales de Leon. Pasa el cursor o haz clic para consultar detalle de
-        una seccion; la leyenda y el inset resaltan la misma seleccion activa.
+        {"Mapa interactivo editorial de secciones electorales de Le\u00f3n. Pasa el cursor o haz clic para consultar detalle de una secci\u00f3n; la leyenda y el inset resaltan la misma selecci\u00f3n activa."}
       </p>
 
       <section className="editorial-main-grid" aria-describedby="map-description">
@@ -199,17 +192,17 @@ export function MapShell() {
             onMapReadyChange={setMainMapReady}
           />
         </section>
-        <section className="legend-area" aria-label="Leyenda y ficha de seccion">
+        <section className="legend-area" aria-label={"Leyenda y ficha de secci\u00f3n"}>
           <BivariateLegend spec={spec} activeClass={activeSection?.bivariate_class ?? null} />
           <section className="active-section-panel" aria-live="polite">
-            <h2 className="panel-title">Seccion activa</h2>
+            <h2 className="panel-title">{"Secci\u00f3n activa"}</h2>
             {activeSection ? (
               <div className="active-section-grid">
                 <p>
                   <strong>section_id:</strong> {activeSection.section_id}
                 </p>
                 <p>
-                  <strong>Seccion:</strong> {activeSection.seccion}
+                  <strong>{"Secci\u00f3n:"}</strong> {activeSection.seccion}
                 </p>
                 <p>
                   <strong>% PAN 2018:</strong> {formatMetric(activeSection.pct_pan_2018)}
@@ -221,15 +214,15 @@ export function MapShell() {
                   <strong>Delta pp:</strong> {formatMetric(activeSection.delta_pan_pp)}
                 </p>
                 <p>
-                  <strong>Clase:</strong> {activeSection.bivariate_class}
+                  <strong>Clase:</strong> {getBivariateClassLabel(activeSection.bivariate_class)}
                 </p>
                 <p>
-                  <strong>has_data:</strong> {activeSection.has_data ? "true" : "false"}
+                  <strong>Datos completos:</strong> {activeSection.has_data ? "S\u00ed" : "No"}
                 </p>
                 {!activeSection.has_data ? <p className="active-section-warning">Sin datos suficientes</p> : null}
               </div>
             ) : (
-              <p className="active-section-empty">Sin seccion seleccionada. Usa hover o clic sobre el mapa.</p>
+              <p className="active-section-empty">{"Sin secci\u00f3n seleccionada. Usa hover o clic sobre el mapa."}</p>
             )}
           </section>
         </section>
@@ -242,11 +235,10 @@ export function MapShell() {
             onActiveSectionChange={setActiveSection}
             onMapReadyChange={setInsetMapReady}
           />
-          <p>Definicion v1 revisable. `is_in_inset` sigue en `false` y no altera el contrato de datos.</p>
         </aside>
       </section>
 
-      <footer className="editorial-footer" aria-label="Fuentes y creditos">
+      <footer className="editorial-footer" aria-label={"Fuentes y cr\u00e9ditos"}>
         <SourceNote sourceLines={spec.source_lines} authorNote={spec.author_note} />
       </footer>
     </main>

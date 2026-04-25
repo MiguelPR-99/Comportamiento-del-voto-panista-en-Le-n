@@ -163,7 +163,7 @@ export function InsetMap({ spec, sections, activeSectionId, onActiveSectionChang
     <div className="inset-map-wrap" role="region" aria-label="Inset urbano de contexto">
       <div className="inset-map-canvas" ref={containerRef} />
       {insetView.isDerivedFromData ? (
-        <p className="inset-note">Inset urbano v1: encuadre editorial derivado del bbox municipal, revisable en Epica 3.3.</p>
+        <p className="inset-note">{"Inset urbano: acercamiento al \u00e1rea central de Le\u00f3n."}</p>
       ) : null}
     </div>
   );
