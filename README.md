@@ -93,7 +93,8 @@ Salida:
 
 ## Limitaciones conocidas
 
-- El inset urbano está definido editorialmente; una geometría formal puede añadirse en una mejora futura.- Escala grafica aproximada por zoom/latitud.
+- El inset urbano está definido editorialmente; una geometría formal puede añadirse en una mejora futura.
+- Escala grafica aproximada por zoom/latitud.
 - Export UI puede variar segun navegador/GPU; CLI con Playwright es la via mas estable.
 - No hay suite automatizada completa de regresion visual cross-browser.
 
