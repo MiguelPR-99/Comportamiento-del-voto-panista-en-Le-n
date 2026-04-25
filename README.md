@@ -2,6 +2,8 @@
 
 Pieza editorial interactiva que replica el mapa "Comportamiento del voto panista en Leon" con enfoque narrativo (no dashboard): coropleta bivariante 3x3, mapa principal, inset urbano, leyenda con conteos reales, escala grafica y exportacion PNG.
 
+Version actual: `v1.1.0`
+
 Deploy publico: [https://voto-panista-leon.vercel.app/](https://voto-panista-leon.vercel.app/)
 
 ## Vista v1
@@ -96,11 +98,8 @@ Salida:
 - Export UI puede variar segun navegador/GPU; CLI con Playwright es la via mas estable.
 - No hay suite automatizada completa de regresion visual cross-browser.
 
-## Backlog v1.1
+## Backlog v1.2
 
-- Mejorar labels de leyenda a espanol natural.
-- Refinar encuadre del mapa principal.
-- Quitar texto tecnico del inset.
 - Formalizar geometria del inset.
 - Mejorar accesibilidad avanzada.
 - Agregar pruebas visuales automatizadas.
