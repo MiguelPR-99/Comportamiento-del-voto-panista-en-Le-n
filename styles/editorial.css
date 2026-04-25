@@ -105,6 +105,14 @@
   text-align: right;
 }
 
+.export-hint {
+  margin: 0;
+  font-size: 0.76rem;
+  color: #5b4f62;
+  max-width: 30rem;
+  text-align: right;
+}
+
 .editorial-main-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -451,6 +459,10 @@
   }
 
   .export-error {
+    text-align: left;
+  }
+
+  .export-hint {
     text-align: left;
   }
 

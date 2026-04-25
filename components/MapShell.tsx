@@ -53,19 +53,45 @@ export function MapShell() {
   const [spec, setSpec] = useState<EditorialMapSpec | null>(null);
   const [sections, setSections] = useState<SectionsGeoJSON | null>(null);
   const [activeSection, setActiveSection] = useState<SectionFeatureProperties | null>(null);
+  const [mainMapReady, setMainMapReady] = useState(false);
+  const [insetMapReady, setInsetMapReady] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [exportingPng, setExportingPng] = useState(false);
   const [exportError, setExportError] = useState<string | null>(null);
 
+  const mapsReady = mainMapReady && insetMapReady;
+
+  const waitForMapCanvases = async (): Promise<void> => {
+    const timeoutMs = 8000;
+    const stepMs = 120;
+    const startedAt = Date.now();
+
+    while (Date.now() - startedAt < timeoutMs) {
+      const root = exportRootRef.current;
+      if (root) {
+        const canvases = Array.from(root.querySelectorAll(".maplibregl-canvas"));
+        const readyCount = canvases.filter((canvas) => canvas.clientWidth > 0 && canvas.clientHeight > 0).length;
+        if (readyCount >= 2) {
+          await new Promise((resolve) => window.requestAnimationFrame(() => resolve(undefined)));
+          await new Promise((resolve) => window.setTimeout(resolve, 120));
+          return;
+        }
+      }
+      await new Promise((resolve) => window.setTimeout(resolve, stepMs));
+    }
+    throw new Error("Los mapas no terminaron de renderizar para exportacion.");
+  };
+
   const handleExportPng = async () => {
-    if (!exportRootRef.current || exportingPng) {
+    if (!exportRootRef.current || exportingPng || !mapsReady) {
       return;
     }
     setExportingPng(true);
     setExportError(null);
 
     try {
+      await waitForMapCanvases();
       const dataUrl = await toPng(exportRootRef.current, {
         cacheBust: true,
         pixelRatio: 2,
@@ -77,7 +103,10 @@ export function MapShell() {
       link.download = "leon_pan_bivariate_desktop.png";
       link.click();
     } catch (err) {
-      const message = err instanceof Error ? err.message : "No fue posible exportar PNG.";
+      const message =
+        err instanceof Error
+          ? `${err.message} Usa export CLI con Playwright para salida reproducible.`
+          : "No fue posible exportar PNG. Usa export CLI con Playwright.";
       setExportError(message);
       console.error(`[MapShell] Error al exportar PNG: ${message}`);
     } finally {
@@ -95,6 +124,8 @@ export function MapShell() {
         setSpec(loadedSpec);
         setSections(normalizedSections);
         setActiveSection(null);
+        setMainMapReady(false);
+        setInsetMapReady(false);
       } catch (err) {
         const message = err instanceof Error ? err.message : "Error inesperado de carga.";
         setError(message);
@@ -142,12 +173,13 @@ export function MapShell() {
               type="button"
               className="export-png-button"
               onClick={handleExportPng}
-              disabled={exportingPng}
+              disabled={exportingPng || !mapsReady}
               aria-label="Exportar pieza editorial como imagen PNG"
             >
-              {exportingPng ? "Exportando..." : "Exportar PNG"}
+              {exportingPng ? "Exportando..." : mapsReady ? "Exportar PNG" : "Preparando mapas..."}
             </button>
             {exportError ? <p className="export-error">Error de exportacion: {exportError}</p> : null}
+            {!mapsReady && !exportError ? <p className="export-hint">Espera a que mapa e inset terminen de renderizar.</p> : null}
           </div>
         </div>
       </header>
@@ -164,6 +196,7 @@ export function MapShell() {
             sections={sections}
             activeSectionId={activeSection?.section_id ?? null}
             onActiveSectionChange={setActiveSection}
+            onMapReadyChange={setMainMapReady}
           />
         </section>
         <section className="legend-area" aria-label="Leyenda y ficha de seccion">
@@ -207,6 +240,7 @@ export function MapShell() {
             sections={sections}
             activeSectionId={activeSection?.section_id ?? null}
             onActiveSectionChange={setActiveSection}
+            onMapReadyChange={setInsetMapReady}
           />
           <p>Definicion v1 revisable. `is_in_inset` sigue en `false` y no altera el contrato de datos.</p>
         </aside>

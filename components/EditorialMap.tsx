@@ -11,6 +11,7 @@ type EditorialMapProps = {
   sections: SectionsGeoJSON;
   activeSectionId: string | null;
   onActiveSectionChange: (section: SectionFeatureProperties | null) => void;
+  onMapReadyChange: (ready: boolean) => void;
 };
 
 type TooltipState = {
@@ -46,7 +47,7 @@ function getScaleState(map: Map): ScaleState {
   return { label, widthPx };
 }
 
-export function EditorialMap({ spec, sections, activeSectionId, onActiveSectionChange }: EditorialMapProps) {
+export function EditorialMap({ spec, sections, activeSectionId, onActiveSectionChange, onMapReadyChange }: EditorialMapProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<Map | null>(null);
   const [tooltip, setTooltip] = useState<TooltipState>(null);
@@ -79,7 +80,8 @@ export function EditorialMap({ spec, sections, activeSectionId, onActiveSectionC
       },
       center: spec.main_view.center,
       zoom: spec.main_view.zoom,
-      attributionControl: false
+      attributionControl: false,
+      preserveDrawingBuffer: true
     });
 
     mapRef.current = map;
@@ -89,6 +91,15 @@ export function EditorialMap({ spec, sections, activeSectionId, onActiveSectionC
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-left");
 
     map.on("load", () => {
+      let readySent = false;
+      const markReady = () => {
+        if (readySent) {
+          return;
+        }
+        readySent = true;
+        onMapReadyChange(true);
+      };
+
       map.addSource("sections", { type: "geojson", data: sections });
       map.addLayer({
         id: "sections-fill",
@@ -165,14 +176,27 @@ export function EditorialMap({ spec, sections, activeSectionId, onActiveSectionC
       };
       refreshScale();
       map.on("move", refreshScale);
+
+      map.on("sourcedata", (event) => {
+        if (event.sourceId === "sections" && event.isSourceLoaded) {
+          markReady();
+        }
+      });
+      map.once("idle", markReady);
+      window.setTimeout(() => {
+        if (map.isSourceLoaded("sections")) {
+          markReady();
+        }
+      }, 1200);
     });
 
     return () => {
+      onMapReadyChange(false);
       onActiveSectionChange(null);
       map.remove();
       mapRef.current = null;
     };
-  }, [sections, spec.main_view.bounds, spec.main_view.center, spec.main_view.zoom, neutralColor, onActiveSectionChange]);
+  }, [sections, spec.main_view.bounds, spec.main_view.center, spec.main_view.zoom, neutralColor, onActiveSectionChange, onMapReadyChange]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -209,4 +233,3 @@ export function EditorialMap({ spec, sections, activeSectionId, onActiveSectionC
     </div>
   );
 }
-

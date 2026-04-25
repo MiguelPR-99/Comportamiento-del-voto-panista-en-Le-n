@@ -32,6 +32,15 @@ npx playwright install chromium
 npm run export:png
 ```
 
+Comportamiento del script CLI:
+- URL por defecto: `http://127.0.0.1:4173`.
+- Si no hay servidor activo en esa URL, inicia uno temporal automaticamente para exportar.
+- Tambien se puede exportar desde otra URL configurando `EXPORT_URL`.
+
+Recomendacion:
+- Para entregables estaticos de portafolio, usar `npm run export:png` como via principal.
+- La exportacion UI puede depender del comportamiento del navegador al capturar canvas WebGL.
+
 ## Deploy con GitHub + Vercel (recomendado)
 
 1. Subir cambios a GitHub (`main` o rama de release).
@@ -69,6 +78,7 @@ Usar esta ruta cuando se necesite publicar rapido sin pasar por UI de Vercel.
 - Fuentes y creditos visibles.
 - Responsive validado en desktop/tablet/mobile.
 - Export PNG en UI funcional.
+- Export PNG CLI validado como respaldo reproducible.
 
 ## Sobre vercel.json
 

@@ -42,7 +42,9 @@ npm run export:png
 ```
 
 Requisitos:
-- La app debe estar corriendo en `http://127.0.0.1:3000`.
+- Por defecto, el script usa `http://127.0.0.1:4173`.
+- Si no detecta servidor en esa URL, levanta uno temporal automaticamente para la captura.
+- Para apuntar a otra URL (ej. deploy), usa `EXPORT_URL`.
 - Si no esta instalado Chromium de Playwright, ejecutar:
 
 ```bash
@@ -51,6 +53,10 @@ npx playwright install chromium
 
 Archivo de salida:
 - `exports/leon_pan_bivariate_desktop.png`
+
+Recomendacion para portafolio/produccion:
+- Usar export CLI con Playwright como salida final reproducible.
+- La exportacion UI depende del soporte del navegador para capturar canvas WebGL.
 
 ## Estructura principal
 

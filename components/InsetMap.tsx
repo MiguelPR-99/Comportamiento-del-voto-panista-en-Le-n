@@ -10,9 +10,10 @@ type InsetMapProps = {
   sections: SectionsGeoJSON;
   activeSectionId: string | null;
   onActiveSectionChange: (section: SectionFeatureProperties | null) => void;
+  onMapReadyChange: (ready: boolean) => void;
 };
 
-export function InsetMap({ spec, sections, activeSectionId, onActiveSectionChange }: InsetMapProps) {
+export function InsetMap({ spec, sections, activeSectionId, onActiveSectionChange, onMapReadyChange }: InsetMapProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<Map | null>(null);
 
@@ -42,7 +43,8 @@ export function InsetMap({ spec, sections, activeSectionId, onActiveSectionChang
       },
       center: insetView.center,
       zoom: insetView.zoom,
-      attributionControl: false
+      attributionControl: false,
+      preserveDrawingBuffer: true
     });
 
     mapRef.current = map;
@@ -54,6 +56,15 @@ export function InsetMap({ spec, sections, activeSectionId, onActiveSectionChang
     map.keyboard.disable();
 
     map.on("load", () => {
+      let readySent = false;
+      const markReady = () => {
+        if (readySent) {
+          return;
+        }
+        readySent = true;
+        onMapReadyChange(true);
+      };
+
       map.addSource("inset-sections", { type: "geojson", data: sections });
       map.addLayer({
         id: "inset-sections-fill",
@@ -108,13 +119,26 @@ export function InsetMap({ spec, sections, activeSectionId, onActiveSectionChang
         map.getCanvas().style.cursor = "";
         onActiveSectionChange(null);
       });
+
+      map.on("sourcedata", (event) => {
+        if (event.sourceId === "inset-sections" && event.isSourceLoaded) {
+          markReady();
+        }
+      });
+      map.once("idle", markReady);
+      window.setTimeout(() => {
+        if (map.isSourceLoaded("inset-sections")) {
+          markReady();
+        }
+      }, 1200);
     });
 
     return () => {
+      onMapReadyChange(false);
       map.remove();
       mapRef.current = null;
     };
-  }, [insetView.bounds, insetView.center, insetView.zoom, neutralColor, onActiveSectionChange, sections]);
+  }, [insetView.bounds, insetView.center, insetView.zoom, neutralColor, onActiveSectionChange, onMapReadyChange, sections]);
 
   useEffect(() => {
     const map = mapRef.current;
