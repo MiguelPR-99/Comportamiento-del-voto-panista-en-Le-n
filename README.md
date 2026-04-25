@@ -93,14 +93,14 @@ Salida:
 
 ## Limitaciones conocidas
 
-- `is_in_inset` se mantiene en `false` en v1 (inset definido editorialmente).
-- Escala grafica aproximada por zoom/latitud.
+- El inset urbano está definido editorialmente; una geometría formal puede añadirse en una mejora futura.- Escala grafica aproximada por zoom/latitud.
 - Export UI puede variar segun navegador/GPU; CLI con Playwright es la via mas estable.
 - No hay suite automatizada completa de regresion visual cross-browser.
 
-## Backlog v1.2
 
-- Formalizar geometria del inset.
+## Mejoras futuras opcionales
+
+- Formalizar geometría del inset.
 - Mejorar accesibilidad avanzada.
 - Agregar pruebas visuales automatizadas.
 - Documentar receta de deploy en Cloudflare Pages.
