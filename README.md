@@ -1,90 +1,108 @@
 # Comportamiento del voto panista en Leon
 
-Pieza editorial interactiva que replica el mapa "Comportamiento del voto panista en Leon", con coropleta bivariante 3x3, mapa principal, inset urbano, leyenda editorial, escala grafica y exportacion PNG.
+Pieza editorial interactiva que replica el mapa "Comportamiento del voto panista en Leon" con enfoque narrativo (no dashboard): coropleta bivariante 3x3, mapa principal, inset urbano, leyenda con conteos reales, escala grafica y exportacion PNG.
+
+Deploy publico: [https://voto-panista-leon.vercel.app/](https://voto-panista-leon.vercel.app/)
+
+## Vista v1
+
+Export oficial validado:
+
+![Export v1](exports/leon_pan_bivariate_desktop.png)
 
 ## Stack
 
 - Next.js + React + TypeScript
 - MapLibre GL JS
+- html-to-image (UI export)
+- Playwright (CLI export robusto)
 - CSS editorial custom
-- Bundle de datos estatico en `public/data` y `public/config`
 
-## Instalacion
+## Fuentes de datos
+
+- INE: cartografia seccional (geometria electoral)
+- IEEG: resultados de diputaciones locales 2018 y 2021
+- INEGI: referencia territorial contextual
+
+Artefactos consumidos por frontend:
+- `public/data/secciones.geojson`
+- `public/config/editorial-map-spec.json`
+
+## Metodologia resumida
+
+- Universo espacial final: `846` secciones de Leon.
+- Clasificacion bivariante v1 cerrada (3x3 + `no_data`):
+- Eje horizontal: `% PAN 2021` (`low <40`, `mid 40-<60`, `high >=60`).
+- Eje vertical: `delta vs 2018` (`decline <-10`, `stable -10 a 10`, `growth >10`).
+- Regla de faltantes: sin imputar ceros; cuando faltan datos clasificatorios se asigna `has_data=false` y `bivariate_class=no_data`.
+
+## Correr localmente
 
 ```bash
 npm install
-```
-
-## Desarrollo local
-
-```bash
 npm run dev
 ```
 
-Abre `http://127.0.0.1:3000`.
+App local:
+- `http://127.0.0.1:3000`
 
-## Build de produccion
+Validacion de calidad:
 
 ```bash
 npm run lint
 npm run build
 ```
 
-## Exportacion PNG
+## Exportar PNG
 
-En UI:
-- Boton `Exportar PNG` dentro de la pieza.
+Via UI:
+- Boton `Exportar PNG` en la pieza.
 
-Por CLI:
+Via CLI (recomendada para portafolio):
 
 ```bash
 npm run export:png
 ```
 
-Requisitos:
-- Por defecto, el script usa `http://127.0.0.1:4173`.
-- Si no detecta servidor en esa URL, levanta uno temporal automaticamente para la captura.
-- Para apuntar a otra URL (ej. deploy), usa `EXPORT_URL`.
-- Si no esta instalado Chromium de Playwright, ejecutar:
+Notas:
+- URL default de export CLI: `http://127.0.0.1:4173`.
+- Si no hay servidor en esa URL, el script inicia uno temporal.
+- Para otra URL, usar `EXPORT_URL`.
+- Si falta navegador de Playwright:
 
 ```bash
 npx playwright install chromium
 ```
 
-Archivo de salida:
+Salida:
 - `exports/leon_pan_bivariate_desktop.png`
 
-Recomendacion para portafolio/produccion:
-- Usar export CLI con Playwright como salida final reproducible.
-- La exportacion UI depende del soporte del navegador para capturar canvas WebGL.
-
-## Estructura principal
+## Estructura del repo
 
 - `app/`: rutas y layout Next.js
 - `components/`: mapa principal, inset, leyenda, tooltip, shell editorial
-- `lib/`: carga de spec/datos y utilidades de features
-- `styles/`: estilo editorial global
-- `public/data/secciones.geojson`: geojson final para frontend
-- `public/config/editorial-map-spec.json`: especificacion editorial y leyenda
-- `docs/`: especificacion y cierre de epicas
-- `reports/frontend_qa/`: reportes de QA frontend
-
-## Datos usados
-
-- `public/data/secciones.geojson`
-- `public/config/editorial-map-spec.json`
-
-El frontend no recalcula metricas electorales ni bins; solo representa artefactos ya procesados.
-
-## Fuentes
-
-- INE: cartografia seccional
-- IEEG: resultados de diputaciones locales 2018 y 2021
-- INEGI: referencia territorial contextual
+- `lib/`: carga de spec/datos y utilidades
+- `styles/`: estilo editorial
+- `public/data/`: bundle geo para web
+- `public/config/`: spec editorial consumido en frontend
+- `data/processed/`: artefactos finales de pipeline
+- `docs/`: especificaciones, cierres y caso de estudio
+- `reports/`: QA de datos y frontend
 
 ## Limitaciones conocidas
 
-- El inset urbano v1 usa encuadre editorial derivado de bbox y es revisable.
-- `is_in_inset` se mantiene en `false` en esta version.
-- La escala grafica es una aproximacion visual por zoom/latitud.
-- El script CLI de PNG depende de Playwright y de tener servidor local activo.
+- `is_in_inset` se mantiene en `false` en v1 (inset definido editorialmente).
+- Escala grafica aproximada por zoom/latitud.
+- Export UI puede variar segun navegador/GPU; CLI con Playwright es la via mas estable.
+- No hay suite automatizada completa de regresion visual cross-browser.
+
+## Backlog v1.1
+
+- Mejorar labels de leyenda a espanol natural.
+- Refinar encuadre del mapa principal.
+- Quitar texto tecnico del inset.
+- Formalizar geometria del inset.
+- Mejorar accesibilidad avanzada.
+- Agregar pruebas visuales automatizadas.
+- Documentar receta de deploy en Cloudflare Pages.
+- Integrar overlay contextual rojo/coral si se confirma fuente oficial.
