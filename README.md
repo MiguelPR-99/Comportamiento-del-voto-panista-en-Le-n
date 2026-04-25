@@ -31,9 +31,9 @@ Artefactos consumidos por frontend:
 ## Metodologia resumida
 
 - Universo espacial final: `846` secciones de Leon.
-- Clasificacion bivariante v1 cerrada (3x3 + `no_data`):
-- Eje horizontal: `% PAN 2021` (`low <40`, `mid 40-<60`, `high >=60`).
-- Eje vertical: `delta vs 2018` (`decline <-10`, `stable -10 a 10`, `growth >10`).
+- Clasificacion bivariante v1 cerrada (3x3 + `no_data`).
+- Eje horizontal (% PAN 2021): `low <40`, `mid 40-<60`, `high >=60`.
+- Eje vertical (delta vs 2018): `decline <-10`, `stable -10 a 10`, `growth >10`.
 - Regla de faltantes: sin imputar ceros; cuando faltan datos clasificatorios se asigna `has_data=false` y `bivariate_class=no_data`.
 
 ## Correr localmente
@@ -68,7 +68,7 @@ Notas:
 - URL default de export CLI: `http://127.0.0.1:4173`.
 - Si no hay servidor en esa URL, el script inicia uno temporal.
 - Para otra URL, usar `EXPORT_URL`.
-- Si falta navegador de Playwright:
+- Si falta navegador de Playwright, ejecutar:
 
 ```bash
 npx playwright install chromium

@@ -1,5 +1,19 @@
 # Post LinkedIn - Comportamiento del voto panista en Leon
 
+## Version final lista para copy/paste (ES)
+
+Publique v1 de una pieza editorial interactiva sobre la variacion del voto PAN en Leon (2018 vs 2021), a nivel seccion electoral.
+
+El proyecto replica una cartografia editorial estatica y la convierte en experiencia web con coropleta bivariante 3x3, mapa principal + inset urbano, tooltip, leyenda con conteos reales y exportacion PNG.
+
+Stack: Next.js + MapLibre, con pipeline geoelectoral documentado de punta a punta.
+
+Demo publica: [https://voto-panista-leon.vercel.app/](https://voto-panista-leon.vercel.app/)
+
+Si te interesa cartografia editorial, data storytelling o geovisualizacion electoral, te invito a ver el proyecto y compartir feedback.
+
+#cartografia #geovisualizacion #dataviz #mapas #gis #frontend #nextjs #maplibre #datajournalism #portafolio
+
 ## Version corta (ES)
 
 Publique una pieza editorial interactiva sobre la variacion del voto PAN en Leon (2018 vs 2021) por seccion electoral.
