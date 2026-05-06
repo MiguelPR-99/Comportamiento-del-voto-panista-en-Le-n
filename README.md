@@ -1,11 +1,13 @@
-# Geospatial Electoral Visualization - Leon, Guanajuato
+# Geospatial Electoral Visualization - León, Guanajuato
 Interactive editorial map for analyzing PAN vote variation between 2018 and 2021 across electoral sections.
 
+English | [Español](README.es.md)
+
 ## Overview
-This project turns official electoral and geographic datasets into an interactive editorial map focused on territorial interpretation.  
-It visualizes how PAN vote share changed between 2018 and 2021 across Leon's electoral sections using a bivariate choropleth design.  
-The result combines data analysis, geospatial visualization, and executive-style communication in a single public-facing artifact.  
-It is designed as a narrative visualization, not a dashboard, with export-ready output for reporting and presentations.
+This project transforms official electoral and geographic datasets into an interactive editorial map focused on territorial interpretation.  
+It visualizes how PAN vote share changed between 2018 and 2021 across electoral sections in León using a bivariate choropleth design.  
+The result combines data analysis, geospatial visualization, and executive-style communication in a public-facing data product.  
+It is designed as a narrative visualization, not a dashboard, with export-ready output for reports and presentations.
 
 ## Live Demo
 Public demo: [https://voto-panista-leon.vercel.app/](https://voto-panista-leon.vercel.app/)
@@ -15,7 +17,7 @@ Validated screenshot / PNG export:
 ![León PAN Bivariate Map v1.1.0](public/images/leon_pan_bivariate_v1.1.0.png)
 
 ## Why this project matters
-This project demonstrates how official electoral and territorial data can be transformed into a clear visual product that supports interpretation, geographic exploration, and communication of findings for decision-making contexts.
+This project demonstrates how official electoral and territorial data can be transformed into a clear visual product that supports territorial interpretation, geographic exploration, and communication of findings for decision-making contexts.
 
 ## What this project demonstrates
 - Data cleaning and spatial data preparation.
@@ -48,7 +50,7 @@ Frontend-consumed artifacts:
 - Final spatial universe: `846` electoral sections in León.
 - Bivariate 3x3 classification plus `no_data`.
 - Horizontal axis: `% PAN 2021` (`low <40`, `mid 40-<60`, `high >=60`).
-- Vertical axis: variation vs 2018 (`decline <-10`, `stable -10 to 10`, `growth >10`).
+- Vertical axis: change compared with 2018 (`decline <-10`, `stable -10 to 10`, `growth >10`).
 - Missing-data handling: no zero imputation.
 - Sections without sufficient classification inputs are tagged as `no_data`.
 
@@ -102,7 +104,7 @@ Output path:
 
 ## Known Limitations
 - Urban inset remains editorial and could be formalized with explicit geometry.
-- Graphic scale is approximate and depends on zoom/latitude.
+- Scale bar is approximate and depends on zoom/latitude.
 - UI export may vary by browser/GPU; Playwright CLI is the most stable option.
 - No full cross-browser visual regression suite yet.
 
