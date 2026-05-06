@@ -1,108 +1,114 @@
-# Comportamiento del voto panista en Leon
+# Geospatial Electoral Visualization - Leon, Guanajuato
+Interactive editorial map for analyzing PAN vote variation between 2018 and 2021 across electoral sections.
 
-Pieza editorial interactiva que replica el mapa "Comportamiento del voto panista en Leon" con enfoque narrativo (no dashboard): coropleta bivariante 3x3, mapa principal, inset urbano, leyenda con conteos reales, escala grafica y exportacion PNG.
+## Overview
+This project turns official electoral and geographic datasets into an interactive editorial map focused on territorial interpretation.  
+It visualizes how PAN vote share changed between 2018 and 2021 across Leon's electoral sections using a bivariate choropleth design.  
+The result combines data analysis, geospatial visualization, and executive-style communication in a single public-facing artifact.  
+It is designed as a narrative visualization, not a dashboard, with export-ready output for reporting and presentations.
 
-Version actual: `v1.1.0`
+## Live Demo
+Public demo: [https://voto-panista-leon.vercel.app/](https://voto-panista-leon.vercel.app/)
 
-Deploy publico: [https://voto-panista-leon.vercel.app/](https://voto-panista-leon.vercel.app/)
+Validated screenshot / PNG export:
 
-## Vista v1
+![León PAN Bivariate Map v1.1.0](public/images/leon_pan_bivariate_v1.1.0.png)
 
-Export oficial validado:
+## Why this project matters
+This project demonstrates how official electoral and territorial data can be transformed into a clear visual product that supports interpretation, geographic exploration, and communication of findings for decision-making contexts.
 
-![Export v1](public/images/leon_pan_bivariate_v1.1.0.png)
+## What this project demonstrates
+- Data cleaning and spatial data preparation.
+- Geospatial visualization with MapLibre.
+- Bivariate classification and visual encoding.
+- Executive-style data storytelling.
+- Reproducible frontend and export workflow.
+- Quality checks and documented assumptions.
+- Ability to translate complex data into a clear visual deliverable.
 
-## Stack
-
+## Tech Stack
 - Next.js + React + TypeScript
 - MapLibre GL JS
-- html-to-image (UI export)
-- Playwright (CLI export robusto)
-- CSS editorial custom
+- html-to-image
+- Playwright
+- Custom editorial CSS
 
-## Fuentes de datos
+## Data Sources
+- INE: cartografía seccional.
+- IEEG: resultados de diputaciones locales 2018 y 2021.
+- INEGI: referencia territorial contextual.
 
-- INE: cartografia seccional (geometria electoral)
-- IEEG: resultados de diputaciones locales 2018 y 2021
-- INEGI: referencia territorial contextual
+Only processed/public-facing artifacts are included for the web app; raw data intake is documented separately.
 
-Artefactos consumidos por frontend:
+Frontend-consumed artifacts:
 - `public/data/secciones.geojson`
 - `public/config/editorial-map-spec.json`
 
-## Metodologia resumida
+## Methodology
+- Final spatial universe: `846` electoral sections in León.
+- Bivariate 3x3 classification plus `no_data`.
+- Horizontal axis: `% PAN 2021` (`low <40`, `mid 40-<60`, `high >=60`).
+- Vertical axis: variation vs 2018 (`decline <-10`, `stable -10 to 10`, `growth >10`).
+- Missing-data handling: no zero imputation.
+- Sections without sufficient classification inputs are tagged as `no_data`.
 
-- Universo espacial final: `846` secciones de Leon.
-- Clasificacion bivariante v1 cerrada (3x3 + `no_data`).
-- Eje horizontal (% PAN 2021): `low <40`, `mid 40-<60`, `high >=60`.
-- Eje vertical (delta vs 2018): `decline <-10`, `stable -10 a 10`, `growth >10`.
-- Regla de faltantes: sin imputar ceros; cuando faltan datos clasificatorios se asigna `has_data=false` y `bivariate_class=no_data`.
+## Repository Structure
+- `app/`
+- `components/`
+- `lib/`
+- `styles/`
+- `public/data/`
+- `public/config/`
+- `public/images/`
+- `scripts/`
+- `data/processed/`
+- `data/raw/README.md`
+- `docs/`
+- `reports/`
 
-## Correr localmente
-
+## Run Locally
 ```bash
 npm install
 npm run dev
-```
-
-App local:
-- `http://127.0.0.1:3000`
-
-Validacion de calidad:
-
-```bash
 npm run lint
 npm run build
 ```
 
-## Exportar PNG
-
+## Export PNG
 Via UI:
-- Boton `Exportar PNG` en la pieza.
+- Use the `Exportar PNG` button in the app.
 
-Via CLI (recomendada para portafolio):
-
+Via CLI (recommended for stable portfolio output):
 ```bash
 npm run export:png
 ```
 
-Notas:
-- URL default de export CLI: `http://127.0.0.1:4173`.
-- Si no hay servidor en esa URL, el script inicia uno temporal.
-- Para otra URL, usar `EXPORT_URL`.
-- Si falta navegador de Playwright, ejecutar:
-
+Notes:
+- Default CLI export URL: `http://127.0.0.1:4173`.
+- If no server is running there, the script starts a temporary one.
+- To target another URL, use `EXPORT_URL`.
+- If Playwright Chromium is missing, run:
 ```bash
 npx playwright install chromium
 ```
 
-Salida:
+Output path:
 - `exports/leon_pan_bivariate_desktop.png`
 
-## Estructura del repo
+## Project Status
+- Portfolio-ready `v1.1.0`
+- Public demo available
+- Future improvements documented
 
-- `app/`: rutas y layout Next.js
-- `components/`: mapa principal, inset, leyenda, tooltip, shell editorial
-- `lib/`: carga de spec/datos y utilidades
-- `styles/`: estilo editorial
-- `public/data/`: bundle geo para web
-- `public/config/`: spec editorial consumido en frontend
-- `data/processed/`: artefactos finales de pipeline
-- `docs/`: especificaciones, cierres y caso de estudio
-- `reports/`: QA de datos y frontend
+## Known Limitations
+- Urban inset remains editorial and could be formalized with explicit geometry.
+- Graphic scale is approximate and depends on zoom/latitude.
+- UI export may vary by browser/GPU; Playwright CLI is the most stable option.
+- No full cross-browser visual regression suite yet.
 
-## Limitaciones conocidas
-
-- El inset urbano está definido editorialmente; una geometría formal puede añadirse en una mejora futura.
-- Escala grafica aproximada por zoom/latitud.
-- Export UI puede variar segun navegador/GPU; CLI con Playwright es la via mas estable.
-- No hay suite automatizada completa de regresion visual cross-browser.
-
-
-## Mejoras futuras opcionales
-
-- Formalizar geometría del inset.
-- Mejorar accesibilidad avanzada.
-- Agregar pruebas visuales automatizadas.
-- Documentar receta de deploy en Cloudflare Pages.
-- Integrar overlay contextual rojo/coral si se confirma fuente oficial.
+## Future Improvements
+- Formalize urban inset geometry.
+- Improve accessibility coverage.
+- Add automated visual testing.
+- Expand deployment documentation.
+- Adapt the framework to additional territorial and operational use cases.
